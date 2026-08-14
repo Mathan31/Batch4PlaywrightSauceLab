@@ -1,9 +1,9 @@
 /**
  * This utility class provides methods to generate fake data using the Faker library.
  * It can be used to create realistic test data for various fields such as names, emails, addresses, etc.
- */
+ */ 
 
-import {faker} from '@faker-js/faker';
+import { faker } from "@faker-js/faker" 
 
 export class FakerDataUtil {
   static generateFirstName(): string {

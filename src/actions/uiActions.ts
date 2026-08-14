@@ -43,4 +43,13 @@ export class UIActions {
     }
    return "";
   }
+
+  public async isVisible(locator: Locator): Promise<boolean> {
+     try{
+      return (await this.getLocator(locator).isVisible());
+    }catch(error){
+       await ExceptionUtil.handleException(error as Error, this.page);
+    }
+   return false;
+  }
 }

@@ -5,7 +5,7 @@ import { Constants } from "../utils/constants";
 
 
 
-class LoginPage extends BasePage {
+export class LoginPage extends BasePage {
 
     private userNameInput: Locator;
     private passwordInput: Locator;
@@ -36,5 +36,15 @@ class LoginPage extends BasePage {
 
     async clickLogin(){
         await this.uiActions.click(this.loginButton);
+    }
+
+    async getErrorMessage(){
+       return await this.uiActions.getText(this.errorMessage);
+    }
+
+    async login(username: string,password: string){
+        await this.enterUserName(username);
+        await this.enterPassword(password);
+        await this.clickLogin();
     }
 }
