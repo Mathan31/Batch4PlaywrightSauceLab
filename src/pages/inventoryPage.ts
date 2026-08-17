@@ -30,6 +30,7 @@ export class InventoryPage extends BasePage {
     }
 
     async clickOnLogout(){
+        await this.clickOnMenu();
         await this.uiActions.click(this.logoutLink);
     }
 
